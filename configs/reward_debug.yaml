@@ -1,0 +1,25 @@
+seed: 1337
+synthetic: false
+tokenizer_path: outputs/tokenizer/tokenizer.json
+sft_checkpoint: null
+out_dir: outputs/checkpoints/reward
+log_path: outputs/logs/reward_metrics.csv
+data:
+  dataset: PKU-Alignment/PKU-SafeRLHF-10K
+  split: train
+  max_samples: 128
+model:
+  n_layer: 2
+  n_embd: 64
+  n_head: 2
+  block_size: 128
+  dropout: 0.1
+max_length: 64
+learning_rate: 0.00001
+weight_decay: 0.01
+warmup_steps: 2
+max_steps: 10
+eval_interval: 5
+batch_size: 2
+eval_batch_size: 2
+grad_clip: 1.0

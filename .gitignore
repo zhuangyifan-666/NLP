@@ -1,0 +1,37 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+
+# Environments
+.venv/
+venv/
+
+# Data and caches
+data/**/*
+!data/.gitkeep
+!data/tinystories/.gitkeep
+!data/alpaca_cleaned/.gitkeep
+!data/pku_saferlhf/.gitkeep
+.cache/
+hf_cache/
+outputs/tokenizer/
+outputs/checkpoints/
+
+# Large training artifacts
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+
+# Keep small milestone artifacts trackable
+!outputs/logs/
+!outputs/logs/.gitkeep
+!outputs/logs/*.csv
+!outputs/figures/
+!outputs/figures/.gitkeep
+!outputs/figures/*.png
+!outputs/examples/
+!outputs/examples/.gitkeep
+!outputs/examples/*.jsonl

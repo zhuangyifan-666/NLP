@@ -1,0 +1,17 @@
+dataset: roneneldan/TinyStories
+split: train
+text_field: text
+max_samples: 50000
+train_max_samples: 100000
+validation_max_samples: 5000
+vocab_size: 16000
+min_frequency: 2
+special_tokens:
+  - "<pad>"
+  - "<bos>"
+  - "<eos>"
+  - "<unk>"
+output_path: outputs/tokenizer/tokenizer.json
+meta_path: outputs/tokenizer/tokenizer.meta.json
+tinystories_out_dir: data/tinystories
+

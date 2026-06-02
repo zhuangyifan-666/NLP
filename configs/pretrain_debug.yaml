@@ -1,0 +1,26 @@
+seed: 1337
+out_dir: outputs/checkpoints/pretrain
+log_path: outputs/logs/pretrain_metrics.csv
+tokenizer_path: outputs/tokenizer/tokenizer.json
+data:
+  train_bin: data/tinystories/train.bin
+  val_bin: data/tinystories/val.bin
+  meta_path: data/tinystories/meta.json
+model:
+  n_layer: 2
+  n_embd: 64
+  n_head: 2
+  block_size: 64
+  dropout: 0.1
+learning_rate: 0.0003
+weight_decay: 0.1
+warmup_steps: 2
+max_steps: 20
+eval_interval: 10
+eval_iters: 2
+per_device_batch_size: 4
+eval_batch_size: 4
+grad_accum_steps: 1
+grad_clip: 1.0
+fp16: true
+

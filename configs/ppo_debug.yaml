@@ -1,0 +1,26 @@
+seed: 1337
+synthetic: true
+tokenizer_path: outputs/tokenizer/tokenizer.json
+sft_checkpoint: null
+reward_checkpoint: null
+out_dir: outputs/checkpoints/ppo
+log_path: outputs/logs/ppo_metrics.csv
+model:
+  n_layer: 2
+  n_embd: 64
+  n_head: 2
+  block_size: 128
+  dropout: 0.1
+prompt_max_length: 32
+max_new_tokens: 16
+batch_size: 2
+ppo_epochs: 2
+max_steps: 2
+learning_rate: 0.000001
+cliprange: 0.2
+vf_coef: 0.5
+ent_coef: 0.01
+kl_beta: 0.05
+temperature: 0.8
+top_k: 50
+grad_clip: 1.0

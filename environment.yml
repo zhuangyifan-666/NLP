@@ -1,0 +1,22 @@
+name: nlp
+channels:
+  - pytorch
+  - nvidia
+  - conda-forge
+dependencies:
+  - python=3.10
+  - pytorch
+  - pytorch-cuda=11.8
+  - numpy
+  - pyyaml
+  - tqdm
+  - matplotlib
+  - pandas
+  - pytest
+  - pip
+  - pip:
+      - datasets
+      - tokenizers
+      - transformers
+      - safetensors
+
