@@ -13,6 +13,7 @@ import torch
 from torch.nn.parallel import DistributedDataParallel as DDP
 from torch.utils.data import DataLoader
 
+from advanced.lora import LoRAConfig, inject_lora, mark_only_lora_trainable
 from nlp_llm.config import deep_update, load_config, parse_overrides
 from nlp_llm.data_sft import SFTCollator, SFTDataset, read_jsonl, synthetic_sft_examples
 from nlp_llm.model import GPT, GPTConfig, load_checkpoint, save_checkpoint, strip_module_prefix
@@ -63,6 +64,36 @@ def freeze_for_last_layers(model: GPT, train_last_n_layers: int) -> None:
         p.requires_grad = True
 
 
+def configure_trainable_parameters(model: GPT, cfg: dict) -> dict | None:
+    lora_cfg = cfg.get("lora", {}) or {}
+    if not bool(lora_cfg.get("enabled", False)):
+        freeze_for_last_layers(model, int(cfg.get("train_last_n_layers", 2)))
+        return None
+
+    lora = LoRAConfig.from_dict(lora_cfg)
+    replaced = inject_lora(model, lora)
+    if not replaced:
+        raise RuntimeError(f"LoRA enabled but no target modules were found: {lora.target_modules}")
+    mark_only_lora_trainable(model)
+
+    if bool(lora_cfg.get("train_lm_head", False)):
+        if model.lm_head.weight is model.transformer["wte"].weight:
+            model.lm_head.weight = torch.nn.Parameter(model.lm_head.weight.detach().clone())
+        for p in model.lm_head.parameters():
+            p.requires_grad = True
+    if bool(lora_cfg.get("train_layer_norm", False)):
+        for module in model.modules():
+            if isinstance(module, torch.nn.LayerNorm):
+                for p in module.parameters():
+                    p.requires_grad = True
+
+    metadata = {"enabled": True, **lora.to_dict()}
+    metadata["train_lm_head"] = bool(lora_cfg.get("train_lm_head", False))
+    metadata["train_layer_norm"] = bool(lora_cfg.get("train_layer_norm", False))
+    metadata["replaced_modules"] = replaced
+    return metadata
+
+
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--config", default="configs/sft_debug.yaml")
@@ -78,6 +109,10 @@ def main() -> None:
         cfg["max_steps"] = args.max_steps
     if args.out_dir is not None:
         cfg["out_dir"] = args.out_dir
+    if args.resume and not bool((cfg.get("lora", {}) or {}).get("enabled", False)):
+        resume_meta = load_checkpoint(args.resume, map_location="cpu")
+        if isinstance(resume_meta.get("lora"), dict) and resume_meta["lora"].get("enabled", False):
+            cfg["lora"] = resume_meta["lora"]
     set_seed(int(cfg.get("seed", 1337)))
     ddp, rank, _, _, device = init_distributed()
     tokenizer = load_tokenizer(cfg.get("tokenizer_path", "outputs/tokenizer/tokenizer.json"), debug_byte_fallback=cfg.get("byte_tokenizer", False))
@@ -99,12 +134,14 @@ def main() -> None:
                 pad_id=tokenizer.pad_id,
             )
         )
+    lora_metadata = configure_trainable_parameters(model, cfg)
     model.to(device)
-    freeze_for_last_layers(model, int(cfg.get("train_last_n_layers", 2)))
     if rank == 0:
         total = model.num_parameters(False)
         trainable = model.num_parameters(True)
         print(f"trainable params: {trainable}/{total} ({trainable / max(1, total):.2%})")
+        if lora_metadata:
+            print(f"LoRA modules: {len(lora_metadata['replaced_modules'])}")
     optimizer = model.configure_optimizers(float(cfg.get("weight_decay", 0.01)), float(cfg.get("learning_rate", 1e-4)))
     start_step = 0
     best_val_loss = math.inf
@@ -117,7 +154,9 @@ def main() -> None:
         best_val_loss = float(ckpt.get("best_val_loss", best_val_loss))
     if ddp:
         model = DDP(model, device_ids=[device.index] if device.type == "cuda" else None)
-    examples = load_examples(cfg.get("data", cfg), args.data_file)
+    data_cfg = dict(cfg)
+    data_cfg.update(cfg.get("data", {}))
+    examples = load_examples(data_cfg, args.data_file)
     split = max(1, int(len(examples) * 0.9))
     train_ds = SFTDataset(examples[:split], tokenizer, int(cfg.get("max_length", 512)))
     val_ds = SFTDataset(examples[split:] or examples[:1], tokenizer, int(cfg.get("max_length", 512)))
@@ -162,10 +201,13 @@ def main() -> None:
             val_loss = estimate_loss(raw, val_loader, device, int(cfg.get("eval_iters", 10)))
             if rank == 0:
                 logger.log({"step": step, "train_loss": train_loss, "val_loss": val_loss, "lr": lr})
-                save_checkpoint(out_dir / "last.pt", model, optimizer, step, best_val_loss, {"tokenizer_path": cfg.get("tokenizer_path")})
+                extra = {"tokenizer_path": cfg.get("tokenizer_path")}
+                if lora_metadata:
+                    extra["lora"] = lora_metadata
+                save_checkpoint(out_dir / "last.pt", model, optimizer, step, best_val_loss, extra)
                 if val_loss < best_val_loss:
                     best_val_loss = val_loss
-                    save_checkpoint(out_dir / "best.pt", model, optimizer, step, best_val_loss, {"tokenizer_path": cfg.get("tokenizer_path")})
+                    save_checkpoint(out_dir / "best.pt", model, optimizer, step, best_val_loss, extra)
                 rank0_print(f"step {step}: train_loss={train_loss:.4f} val_loss={val_loss:.4f}")
     cleanup_distributed()
 

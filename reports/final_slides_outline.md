@@ -12,8 +12,7 @@
 10. Reward model design and pairwise ranking loss
 11. PPO/RLHF implementation details
 12. Safety evaluation prompts and manual scoring protocol
-13. Advanced methods: LoRA and PPO sampling hooks
-14. Ablation plan: model scale, SFT data size, RLHF before/after
-15. Failure cases and limitations
+13. Advanced methods: LoRA PEFT and PPO safety-prompt sampling
+14. Ablation results/status: model scale, SFT data size, LoRA, RLHF before/after
+15. Failure cases: weak instruction following, weak reward accuracy, failed safety refusal
 16. Final conclusions and future work
-

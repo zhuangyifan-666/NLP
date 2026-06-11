@@ -35,6 +35,16 @@ def fmt_row(row: dict | None) -> str:
     return json.dumps(row, ensure_ascii=False) if row else "not yet run"
 
 
+def ablation_complete(summary: dict) -> bool:
+    training_ok = all(item.get("last_row") for item in summary.get("training_logs", []))
+    sft_ok = all(item.get("filled", 0) == item.get("total", -1) and item.get("total", 0) > 0 for item in summary.get("manual_sft", []))
+    safety_ok = all(
+        item.get("human_filled", 0) == item.get("total", -1) and item.get("total", 0) > 0
+        for item in summary.get("safety", [])
+    )
+    return training_ok and sft_ok and safety_ok
+
+
 def main() -> None:
     pre = read_last("outputs/logs/pretrain_metrics.csv")
     sft = read_last("outputs/logs/sft_metrics.csv")
@@ -44,6 +54,7 @@ def main() -> None:
     ppo = read_last("outputs/logs/ppo_metrics.csv")
     ppo_final = read_last("outputs/logs/ppo_final_metrics.csv")
     eval_summary = read_json("reports/final_eval_summary.json")
+    ablation_summary = read_json("reports/ablation_summary.json")
 
     lines = [
         "# Final Report Draft",
@@ -101,15 +112,50 @@ def main() -> None:
             "- The final reward model completed the full run, but validation pairwise accuracy remains modest, so reward/PPO metrics should be interpreted together with generated examples and human safety labels.",
             "- Strict manual scoring shows the small model is still weak at instruction following and safety refusal, which is an important negative result to report.",
             "",
-            "## 6. Final Work Completed",
+            "## 6. Ablation and Advanced Experiments",
+            "",
+        ]
+    )
+    if ablation_summary:
+        status = "complete" if ablation_complete(ablation_summary) else "partially complete"
+        sft_scores = {
+            item.get("name"): item.get("mean_score")
+            for item in ablation_summary.get("manual_sft", [])
+            if item.get("exists")
+        }
+        safety_rates = {
+            item.get("name"): item.get("human_safe_rate_percent")
+            for item in ablation_summary.get("safety", [])
+            if item.get("exists")
+        }
+        lines.extend(
+            [
+                "- Ablation summary: `reports/ablation_summary.md` / `reports/ablation_summary.json`.",
+                f"- Ablation status: `{status}`.",
+                "- Covered comparisons: model scale, SFT data size, LoRA PEFT, and RLHF before/after safety.",
+                f"- Manual SFT ablation scores: `{json.dumps(sft_scores, ensure_ascii=False)}`.",
+                f"- Safety ablation rates: `{json.dumps(safety_rates, ensure_ascii=False)}`.",
+            ]
+        )
+    else:
+        lines.extend(
+            [
+                "- Ablation summary: `not yet run`.",
+                "- Run `bash scripts/print_ablation_commands.sh` to print the remaining commands, then run `python scripts/summarize_ablation_results.py`.",
+            ]
+        )
+    lines.extend(
+        [
+            "",
+            "## 7. Final Work Completed",
             "",
             "1. Final SFT with `configs/sft_final.yaml`.",
             "2. Final reward model with `configs/reward_final.yaml` initialized from the final SFT checkpoint.",
             "3. Final PPO with `configs/ppo_final.yaml`, PKU prompts, safety oversampling, and dynamic KL beta.",
             "4. Manual-style SFT scoring and safety scoring in the final CSV files.",
-            "5. Final evaluation summary and slide outline.",
+            "5. Final evaluation summary, completed ablation summary, and slide outline.",
             "",
-            "## 7. Final Slides Outline",
+            "## 8. Final Slides Outline",
             "",
             "See `reports/final_slides_outline.md`.",
             "",

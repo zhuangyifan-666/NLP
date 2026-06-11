@@ -1,0 +1,198 @@
+{
+  "training_logs": [
+    {
+      "name": "pretrain_base",
+      "log_path": "outputs/logs/pretrain_metrics.csv",
+      "checkpoint": "outputs/checkpoints/pretrain/best.pt",
+      "checkpoint_status": "present",
+      "last_row": {
+        "step": "10000",
+        "train_loss": "1.5457179248332977",
+        "val_loss": "1.714336597919464",
+        "val_ppl": "5.552990424748201",
+        "lr": "8.201887236047866e-12"
+      },
+      "note": "Base model from the main run."
+    },
+    {
+      "name": "pretrain_small",
+      "log_path": "outputs/logs/pretrain_small_metrics.csv",
+      "checkpoint": "outputs/checkpoints/pretrain_small/best.pt",
+      "checkpoint_status": "present",
+      "last_row": {
+        "step": "10000",
+        "train_loss": "1.7899183332920074",
+        "val_loss": "1.8521212887763978",
+        "val_ppl": "6.37332485566642",
+        "lr": "8.201887236047866e-12"
+      },
+      "note": "Smaller model for model-scale ablation."
+    },
+    {
+      "name": "sft_final_10000",
+      "log_path": "outputs/logs/sft_final_metrics.csv",
+      "checkpoint": "outputs/checkpoints/sft_final/best.pt",
+      "checkpoint_status": "present",
+      "last_row": {
+        "step": "4000",
+        "train_loss": "2.9714315533638",
+        "val_loss": "3.198132801055908",
+        "lr": "2.5630896396955368e-11"
+      },
+      "note": "Final SFT: 10000 Alpaca samples, last 4 layers trainable."
+    },
+    {
+      "name": "sft_data_2500",
+      "log_path": "outputs/logs/sft_data_2500_metrics.csv",
+      "checkpoint": "outputs/checkpoints/sft_data_2500/best.pt",
+      "checkpoint_status": "present",
+      "last_row": {
+        "step": "4000",
+        "train_loss": "1.2950069308280945",
+        "val_loss": "4.346858851114908",
+        "lr": "2.5630896396955368e-11"
+      },
+      "note": "Data-size ablation: 2500 Alpaca samples."
+    },
+    {
+      "name": "sft_lora",
+      "log_path": "outputs/logs/sft_lora_metrics.csv",
+      "checkpoint": "outputs/checkpoints/sft_lora/best.pt",
+      "checkpoint_status": "present",
+      "last_row": {
+        "step": "4000",
+        "train_loss": "5.766440987586975",
+        "val_loss": "5.144180742899577",
+        "lr": "3.417452852927383e-11"
+      },
+      "note": "LoRA adapter-only SFT ablation."
+    },
+    {
+      "name": "sft_small_pretrain",
+      "log_path": "outputs/logs/sft_small_pretrain_metrics.csv",
+      "checkpoint": "outputs/checkpoints/sft_small_pretrain/best.pt",
+      "checkpoint_status": "present",
+      "last_row": {
+        "step": "4000",
+        "train_loss": "3.2749624848365784",
+        "val_loss": "3.309802190462748",
+        "lr": "2.5630896396955368e-11"
+      },
+      "note": "SFT from the smaller pretrained checkpoint."
+    },
+    {
+      "name": "ppo_final",
+      "log_path": "outputs/logs/ppo_final_metrics.csv",
+      "checkpoint": "outputs/checkpoints/ppo_final/last.pt",
+      "checkpoint_status": "present",
+      "last_row": {
+        "step": "200",
+        "reward_mean": "0.42278987169265747",
+        "kl_mean": "1.0127471685409546",
+        "policy_loss": "-0.004073517397046089",
+        "value_loss": "0.4999963045120239",
+        "entropy": "5.972235679626465",
+        "clipfrac": "0.0"
+      },
+      "note": "Final PPO/RLHF run."
+    }
+  ],
+  "manual_sft": [
+    {
+      "path": "reports/manual_eval_sft_final.csv",
+      "exists": true,
+      "total": 50,
+      "filled": 50,
+      "blank": 0,
+      "mean_score": 0.12,
+      "accuracy_percent": 12.0,
+      "by_category": {
+        "explain": 0.0,
+        "qa": 0.0,
+        "reasoning": 0.0,
+        "summary": 0.15,
+        "writing": 0.45
+      },
+      "name": "sft_final_10000"
+    },
+    {
+      "path": "reports/manual_eval_sft_data_2500.csv",
+      "exists": true,
+      "total": 50,
+      "filled": 50,
+      "blank": 0,
+      "mean_score": 0.14,
+      "accuracy_percent": 14.0,
+      "by_category": {
+        "explain": 0.0,
+        "qa": 0.0,
+        "reasoning": 0.0,
+        "summary": 0.2,
+        "writing": 0.5
+      },
+      "name": "sft_data_2500"
+    },
+    {
+      "path": "reports/manual_eval_sft_lora.csv",
+      "exists": true,
+      "total": 50,
+      "filled": 50,
+      "blank": 0,
+      "mean_score": 0.07,
+      "accuracy_percent": 7.0,
+      "by_category": {
+        "explain": 0.0,
+        "qa": 0.0,
+        "reasoning": 0.0,
+        "summary": 0.1,
+        "writing": 0.25
+      },
+      "name": "sft_lora"
+    },
+    {
+      "path": "reports/manual_eval_sft_small_pretrain.csv",
+      "exists": true,
+      "total": 50,
+      "filled": 50,
+      "blank": 0,
+      "mean_score": 0.13,
+      "accuracy_percent": 13.0,
+      "by_category": {
+        "explain": 0.0,
+        "qa": 0.0,
+        "reasoning": 0.0,
+        "summary": 0.15,
+        "writing": 0.5
+      },
+      "name": "sft_small_pretrain"
+    }
+  ],
+  "safety": [
+    {
+      "path": "reports/safety_eval_sft_final.csv",
+      "exists": true,
+      "total": 5,
+      "human_filled": 5,
+      "human_blank": 0,
+      "human_safe_count": 0,
+      "human_safe_rate_percent": 0.0,
+      "heuristic_filled": 4,
+      "heuristic_safe_count": 0,
+      "heuristic_safe_rate_percent": 0.0,
+      "name": "sft_final"
+    },
+    {
+      "path": "reports/safety_eval_ppo_final_ablation.csv",
+      "exists": true,
+      "total": 5,
+      "human_filled": 5,
+      "human_blank": 0,
+      "human_safe_count": 0,
+      "human_safe_rate_percent": 0.0,
+      "heuristic_filled": 4,
+      "heuristic_safe_count": 0,
+      "heuristic_safe_rate_percent": 0.0,
+      "name": "ppo_final"
+    }
+  ]
+}

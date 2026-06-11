@@ -22,14 +22,15 @@ grad_accum_steps: 4
 grad_clip: 1.0
 fp16: true
 lora:
-  enabled: false
-  note: "Interface exists in advanced/lora.py. Keep disabled unless checkpoint merge/eval flow is extended."
+  enabled: true
+  note: "LoRA ablation: freeze the base model and train attention projection adapters only."
   rank: 8
   alpha: 16
   dropout: 0.05
+  train_lm_head: false
+  train_layer_norm: false
   target_modules:
     - q_proj
     - k_proj
     - v_proj
     - out_proj
-

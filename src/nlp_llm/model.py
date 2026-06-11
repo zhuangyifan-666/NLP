@@ -245,6 +245,12 @@ def load_gpt_from_checkpoint(path: str | Path, map_location: str | torch.device 
     if "config" not in ckpt or ckpt["config"] is None:
         raise ValueError(f"Checkpoint missing model config: {path}")
     model = GPT(GPTConfig.from_dict(ckpt["config"]))
+    lora_cfg = ckpt.get("lora")
+    if isinstance(lora_cfg, dict) and lora_cfg.get("enabled", False):
+        try:
+            from advanced.lora import LoRAConfig, inject_lora
+        except ImportError as exc:
+            raise RuntimeError("Checkpoint uses LoRA, but advanced/lora.py is not importable.") from exc
+        inject_lora(model, LoRAConfig.from_dict(lora_cfg))
     model.load_state_dict(strip_module_prefix(ckpt["model"]))
     return model
-

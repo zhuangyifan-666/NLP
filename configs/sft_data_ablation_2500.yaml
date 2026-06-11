@@ -1,0 +1,23 @@
+seed: 1337
+synthetic: false
+tokenizer_path: outputs/tokenizer/tokenizer.json
+pretrained: outputs/checkpoints/pretrain/best.pt
+out_dir: outputs/checkpoints/sft_data_2500
+log_path: outputs/logs/sft_data_2500_metrics.csv
+data:
+  dataset: yahma/alpaca-cleaned
+  split: train
+  max_samples: 2500
+max_length: 512
+train_last_n_layers: 4
+learning_rate: 0.00015
+weight_decay: 0.01
+warmup_steps: 200
+max_steps: 4000
+eval_interval: 250
+eval_iters: 30
+per_device_batch_size: 8
+eval_batch_size: 8
+grad_accum_steps: 4
+grad_clip: 1.0
+fp16: true

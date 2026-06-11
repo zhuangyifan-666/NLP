@@ -1,0 +1,328 @@
+id,category,prompt,input,model_response,score,notes
+1,qa,What is gravity?,,"Instruction:
+What is gravity?
+
+ Response:
+My diary is a new book that shows many different things. These books are from the store. Some books are of the books are to the store to a new book about a new book, but it is always the best book about a new book. It is also a perfect book, but a different book.
+
+Vic: A book is a special book. It has a big cover that shows the book to the library, and it is important to choose the one.",0,严格人工式评分：未正确解释问题核心概念，回答跑题或胡乱生成。
+2,explain,Explain why the sky is blue in simple words.,,"Instruction:
+Explain why the sky is blue in simple words.
+
+ Response:
+The sky is blue.",0,严格人工式评分：没有解释原因，只重复现象或输出无关内容。
+3,writing,Write a short story about friendship.,,"Instruction:
+Write a short story about friendship.
+
+ Response:
+The first story is: A brave and friendly story is about to make a story about friendship. This story is:
+
+A brave story that friendship is a true prince who created a goal, and a valuable mission with courage and courage, courage, and a strong heart.
+
+The first story has been about the kingdom, and the company they all become. All of the people who are kind to them, and they often say hello to them.
+
+The story teaches",0.5,严格人工式评分：有短故事形式或触及 friendship/friends，但情节和语言明显混乱，按部分完成。
+4,summary,Summarize the text.,Cats sleep a lot. They like warm places.,"Instruction:
+Summarize the text.
+
+ Input:
+Cats sleep a lot. They like warm places.
+
+ Response:
+Cndue the soft, fluffy energy, and warm places can be a warm place.",0.5,严格人工式评分：捕捉到 cats/sleep/warm places 中的部分要点，但不完整或表达混乱。
+5,reasoning,"If A is taller than B and B is taller than C, who is tallest?",,"Instruction:
+If A is taller than B and B is taller than C, who is tallest?
+
+ Response:
+AI will not be able to climb the tallest hill of the hill, that are not as high as the tallest.",0,严格人工式评分：未给出正确推理结论 A，回答错误或混乱。
+6,qa,What is gravity?,,"Instruction:
+What is gravity?
+
+ Response:
+The cable is part of a job: ""The cable is an idea.",0,严格人工式评分：未正确解释问题核心概念，回答跑题或胡乱生成。
+7,explain,Explain why the sky is blue in simple words.,,"Instruction:
+Explain why the sky is blue in simple words.
+
+ Response:
+The sky is not blue, but a blue cloud is a bright color.",0,严格人工式评分：没有解释原因，只重复现象或输出无关内容。
+8,writing,Write a short story about friendship.,,"Instruction:
+Write a short story about friendship.
+
+ Response:
+I want to give a gift and care about friendship, who helps you to be kind and compassionate. This taught you:
+
+Pearorly: This is an invitation for friendship:
+
+Creers:
+Peted: This is a simple gift for you.
+
+Creer: That is the one that makes me happy with you. To show you love, you will be very compassionate with your heart, and your heart. This is the most",0,严格人工式评分：未形成可用的友情短故事，内容跑题或明显混乱。
+9,summary,Summarize the text.,Cats sleep a lot. They like warm places.,"Instruction:
+Summarize the text.
+
+ Input:
+Cats sleep a lot. They like warm places.
+
+ Response:
+Fers are both big and round.",0,严格人工式评分：未概括输入文本要点，回答跑题或不可用。
+10,reasoning,"If A is taller than B and B is taller than C, who is tallest?",,"Instruction:
+If A is taller than B and B is taller than C, who is tallest?
+
+ Response:
+AI is a tower.",0,严格人工式评分：未给出正确推理结论 A，回答错误或混乱。
+11,qa,What is gravity?,,"Instruction:
+What is gravity?
+
+ Response:
+The cable is a job, as a job, can help support us by working together in the day. The cable is a powerful job of doing, like working in the room, and doing an experiment together. Here, help me fix the cable.
+
+I think it is not working properly.
+
+A job- I can help you do it with a problem-pution to out in the process. The cable is a strong job, but it is also a",0,严格人工式评分：未正确解释问题核心概念，回答跑题或胡乱生成。
+12,explain,Explain why the sky is blue in simple words.,,"Instruction:
+Explain why the sky is blue in simple words.
+
+ Response:
+The sky is soft and sunny.",0,严格人工式评分：没有解释原因，只重复现象或输出无关内容。
+13,writing,Write a short story about friendship.,,"Instruction:
+Write a short story about friendship.
+
+ Response:
+It's true to have a friend, life, and life.",0,严格人工式评分：未形成可用的友情短故事，内容跑题或明显混乱。
+14,summary,Summarize the text.,Cats sleep a lot. They like warm places.,"Instruction:
+Summarize the text.
+
+ Input:
+Cats sleep a lot. They like warm places.
+
+ Response:
+I'm feeling comfortable in my bed.",0,严格人工式评分：未概括输入文本要点，回答跑题或不可用。
+15,reasoning,"If A is taller than B and B is taller than C, who is tallest?",,"Instruction:
+If A is taller than B and B is taller than C, who is tallest?
+
+ Response:
+There is a big, tall tree that is made of a tall tree as a tree that is the biggest and tall. It is a very tall tree that is the only giant tree that is known for its beauty. The tree is called a big tree that is the highest, with its leaves and leaves, and a tall, green leaves, which are the most beautiful, brown, and the most beautiful trunk of the ground.
+
+An oak tree, a tree that is the",0,严格人工式评分：未给出正确推理结论 A，回答错误或混乱。
+16,qa,What is gravity?,,"Instruction:
+What is gravity?
+
+ Response:
+The world is a normal sight that is two parts of one is unique and unique, with a unique and bright and green nose, and the different shape.",0,严格人工式评分：未正确解释问题核心概念，回答跑题或胡乱生成。
+17,explain,Explain why the sky is blue in simple words.,,"Instruction:
+Explain why the sky is blue in simple words.
+
+ Response:
+The sky is yellow and it is a bright yellow color that is a bright blue colour.",0,严格人工式评分：没有解释原因，只重复现象或输出无关内容。
+18,writing,Write a short story about friendship.,,"Instruction:
+Write a short story about friendship.
+
+ Response:
+Piing a beautiful story about friendship, a magical world full of friendly and wonderful dreams.",0,严格人工式评分：未形成可用的友情短故事，内容跑题或明显混乱。
+19,summary,Summarize the text.,Cats sleep a lot. They like warm places.,"Instruction:
+Summarize the text.
+
+ Input:
+Cats sleep a lot. They like warm places.
+
+ Response:
+Plonm is an independent day as a cozy morning or a warm and a warm hug.",0,严格人工式评分：未概括输入文本要点，回答跑题或不可用。
+20,reasoning,"If A is taller than B and B is taller than C, who is tallest?",,"Instruction:
+If A is taller than B and B is taller than C, who is tallest?
+
+ Response:
+AI can be tall like L and unamal, as if you grow, you can learn. But you have to use your intelligent words to help you to understand and start asking for permission.
+
+AI can also learn more. Spling:
+
+To become a tall and tall-quing-up-toms, I can help you understand. I can also teach you how to practice. The I can also show you how to take care",0,严格人工式评分：未给出正确推理结论 A，回答错误或混乱。
+21,qa,What is gravity?,,"Instruction:
+What is gravity?
+
+ Response:
+The power that is the power that can be used to be used to a new world. It is only a moment for a reason-litor that comes from every the time.",0,严格人工式评分：未正确解释问题核心概念，回答跑题或胡乱生成。
+22,explain,Explain why the sky is blue in simple words.,,"Instruction:
+Explain why the sky is blue in simple words.
+
+ Response:
+The sky is clear and bright.",0,严格人工式评分：没有解释原因，只重复现象或输出无关内容。
+23,writing,Write a short story about friendship.,,"Instruction:
+Write a short story about friendship.
+
+ Response:
+1. Po: When you want to be dependable, you can be dependable to make your dreams come true.
+2. Eo: I will show you that you can make your dreams come true.
+
+5. Bo: Fo: Eo - Eo. Soo.EI, I can perform your dream.
+4. Co. Eo: Lo. Baot! Eo. Eo, this is an",0,严格人工式评分：未形成可用的友情短故事，内容跑题或明显混乱。
+24,summary,Summarize the text.,Cats sleep a lot. They like warm places.,"Instruction:
+Summarize the text.
+
+ Input:
+Cats sleep a lot. They like warm places.
+
+ Response:
+The world of the cold and cold-inesting for a long time and nights.",0,严格人工式评分：未概括输入文本要点，回答跑题或不可用。
+25,reasoning,"If A is taller than B and B is taller than C, who is tallest?",,"Instruction:
+If A is taller than B and B is taller than C, who is tallest?
+
+ Response:
+AI can be taller than B, B, B, B, B, B, B, B, B, B, B, R, B, Bb, B, B, B
+
+The tree is taller than B. Bum, B, B, B. B, B, B. B, B, B, B, B. B, B. B. Bo, B. B. B. B. B. B. B",0,严格人工式评分：未给出正确推理结论 A，回答错误或混乱。
+26,qa,What is gravity?,,"Instruction:
+What is gravity?
+
+ Response:
+The cable has a very flexible body. It is called as the same shape, with a pattern. It is also a flexible, which is a normal shape that can be used to move through the shape. It can also move through and out of the shape, and that you can even carry in such as much energy, or from the shape, to the shape and the shape, or the shape.
+
+At tas with a mat, the cable is a shape, and",0,严格人工式评分：未正确解释问题核心概念，回答跑题或胡乱生成。
+27,explain,Explain why the sky is blue in simple words.,,"Instruction:
+Explain why the sky is blue in simple words.
+
+ Response:
+Finally, the sky is blue and a blue, with yellow lights.",0,严格人工式评分：没有解释原因，只重复现象或输出无关内容。
+28,writing,Write a short story about friendship.,,"Instruction:
+Write a short story about friendship.
+
+ Response:
+It's a slow story to that your words can be an important story of friendship, and friendship.
+
+The story of friends, and life are always a reminder to support, which's never going to life.",0.5,严格人工式评分：有短故事形式或触及 friendship/friends，但情节和语言明显混乱，按部分完成。
+29,summary,Summarize the text.,Cats sleep a lot. They like warm places.,"Instruction:
+Summarize the text.
+
+ Input:
+Cats sleep a lot. They like warm places.
+
+ Response:
+Croinuter.",0,严格人工式评分：未概括输入文本要点，回答跑题或不可用。
+30,reasoning,"If A is taller than B and B is taller than C, who is tallest?",,"Instruction:
+If A is taller than B and B is taller than C, who is tallest?
+
+ Response:
+AI is not higher than C and B.",0,严格人工式评分：未给出正确推理结论 A，回答错误或混乱。
+31,qa,What is gravity?,,"Instruction:
+What is gravity?
+
+ Response:
+A wealthy man has a big red cap that is only datat. This is an original cap that has a long, rough head and a data, a small, bushy head that has a long neck, and a short eye, and on the nose. It is a shiny, like a feather, like a round, and a green skin. It looks at its neck and feels more special. It has a thin neck, a yellow head, and two eyes,",0,严格人工式评分：未正确解释问题核心概念，回答跑题或胡乱生成。
+32,explain,Explain why the sky is blue in simple words.,,"Instruction:
+Explain why the sky is blue in simple words.
+
+ Response:
+One day, the sky is blue and the sky is blue.",0,严格人工式评分：没有解释原因，只重复现象或输出无关内容。
+33,writing,Write a short story about friendship.,,"Instruction:
+Write a short story about friendship.
+
+ Response:
+The story of friendship is an offer of a friendship. The heart's always by friendship, a kind heart, and a kind heart, and a kind heart. The story is that life can grow strong and strong, and a happy heart, and life.",0.5,严格人工式评分：有短故事形式或触及 friendship/friends，但情节和语言明显混乱，按部分完成。
+34,summary,Summarize the text.,Cats sleep a lot. They like warm places.,"Instruction:
+Summarize the text.
+
+ Input:
+Cats sleep a lot. They like warm places.
+
+ Response:
+Carherm: Bceino, Breo, Eve S. Ceoromle: Bquic?",0,严格人工式评分：未概括输入文本要点，回答跑题或不可用。
+35,reasoning,"If A is taller than B and B is taller than C, who is tallest?",,"Instruction:
+If A is taller than B and B is taller than C, who is tallest?
+
+ Response:
+This is a tall thing that I can't seem to be a big and intelligent, so the two of them are also as a large, small, can be a big and tall and powerful as a tall friend.",0,严格人工式评分：未给出正确推理结论 A，回答错误或混乱。
+36,qa,What is gravity?,,"Instruction:
+What is gravity?
+
+ Response:
+AAAAAAAImic is a lost, lost, so I can't find the way out. It's nothing to do.
+
+AIgise of the AI can't find the way out.
+
+The end of the game, the Grapidatatse is called the Peron, and the Lysea is the most lost place in the world. It is an unknown, so Idimm",0,严格人工式评分：未正确解释问题核心概念，回答跑题或胡乱生成。
+37,explain,Explain why the sky is blue in simple words.,,"Instruction:
+Explain why the sky is blue in simple words.
+
+ Response:
+The sun is clear, but is also clear. The sky is a place where the sky is green and bright is the sun or the wind is bright.",0,严格人工式评分：没有解释原因，只重复现象或输出无关内容。
+38,writing,Write a short story about friendship.,,"Instruction:
+Write a short story about friendship.
+
+ Response:
+The story of friendship is always by friendship, including friendship, and friendship. Sright, the power of friendship, friendship is more precious than anything that is the most important to the people who care for each other, and support each other.",0.5,严格人工式评分：有短故事形式或触及 friendship/friends，但情节和语言明显混乱，按部分完成。
+39,summary,Summarize the text.,Cats sleep a lot. They like warm places.,"Instruction:
+Summarize the text.
+
+ Input:
+Cats sleep a lot. They like warm places.
+
+ Response:
+Ccral in the yard:
+Cro: 
+
+Cbit
+Ccit:",0,严格人工式评分：未概括输入文本要点，回答跑题或不可用。
+40,reasoning,"If A is taller than B and B is taller than C, who is tallest?",,"Instruction:
+If A is taller than B and B is taller than C, who is tallest?
+
+ Response:
+There is no taller than C.",0,严格人工式评分：未给出正确推理结论 A，回答错误或混乱。
+41,qa,What is gravity?,,"Instruction:
+What is gravity?
+
+ Response:
+1. Pitations: Dont judge them with their own unique, unique, beauty, and beauty. This is a clear, and friendly symbol that can be used to people, often of their own business, and their appearance. This is a sign of that can be used to be used to their own business, such as their own and respect-vies, including our family and friends.
+
+2. Sitorving Luable: The sign was an",0,严格人工式评分：未正确解释问题核心概念，回答跑题或胡乱生成。
+42,explain,Explain why the sky is blue in simple words.,,"Instruction:
+Explain why the sky is blue in simple words.
+
+ Response:
+The sky is bright like the sky on bright colors.",0,严格人工式评分：没有解释原因，只重复现象或输出无关内容。
+43,writing,Write a short story about friendship.,,"Instruction:
+Write a short story about friendship.
+
+ Response:
+The first story is when it came to life, and that it's like it's, life.",0,严格人工式评分：未形成可用的友情短故事，内容跑题或明显混乱。
+44,summary,Summarize the text.,Cats sleep a lot. They like warm places.,"Instruction:
+Summarize the text.
+
+ Input:
+Cats sleep a lot. They like warm places.
+
+ Response:
+Car sleep a lot.",0.5,严格人工式评分：捕捉到 cats/sleep/warm places 中的部分要点，但不完整或表达混乱。
+45,reasoning,"If A is taller than B and B is taller than C, who is tallest?",,"Instruction:
+If A is taller than B and B is taller than C, who is tallest?
+
+ Response:
+AI that is taller than the tallest number of B.",0,严格人工式评分：未给出正确推理结论 A，回答错误或混乱。
+46,qa,What is gravity?,,"Instruction:
+What is gravity?
+
+ Response:
+The wind is high in the sky and is sometimes ""ping"" on the wind is: ""colade the wind"" is a wind that is an hour-didly, where it is a wind that is a step, it is a gust of wind and that is a branch that is blowing through the air. As the wind is our tail, it makes the wind in the air, making it through the air, or as if it goes. The wind is",0,严格人工式评分：未正确解释问题核心概念，回答跑题或胡乱生成。
+47,explain,Explain why the sky is blue in simple words.,,"Instruction:
+Explain why the sky is blue in simple words.
+
+ Response:
+The sky is grey like a beautiful blue sky and bright, is the biggest of the sky.",0,严格人工式评分：没有解释原因，只重复现象或输出无关内容。
+48,writing,Write a short story about friendship.,,"Instruction:
+Write a short story about friendship.
+
+ Response:
+""Indreate a novel about friendship, and friendship with friendship. That's not the most important story about friendship, as friendship, and friendship, just as the most valuable value of friendship. It's always a valuable life that you are living in love, and love, or happy life, but something was more important:
+
+The words of friendship, friendship and friendship, and love in the heart. They also learned that friendship can shine and happiness, and understanding,",0.5,严格人工式评分：有短故事形式或触及 friendship/friends，但情节和语言明显混乱，按部分完成。
+49,summary,Summarize the text.,Cats sleep a lot. They like warm places.,"Instruction:
+Summarize the text.
+
+ Input:
+Cats sleep a lot. They like warm places.
+
+ Response:
+Creurorion of the teadror, this is a way.",0,严格人工式评分：未概括输入文本要点，回答跑题或不可用。
+50,reasoning,"If A is taller than B and B is taller than C, who is tallest?",,"Instruction:
+If A is taller than B and B is taller than C, who is tallest?
+
+ Response:
+AI is taller than B and Bus. It is so tall, like a tall house, on a wide, in the middle, blue world. It is a huge tree, with lots of leaves and a beautiful green trees, and the trees. It has been kept in the middle and the sun, and it is covered in the bright green leaves, it is surrounded by the sun. A, a branch, and the leaves are the beauty of the sun.",0,严格人工式评分：未给出正确推理结论 A，回答错误或混乱。

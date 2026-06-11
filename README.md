@@ -188,20 +188,20 @@ SKIP_INSTALL=1 bash scripts/run_milestone_pipeline.sh
 - Safety eval：`reports/safety_eval.csv`
 - Milestone report：`reports/milestone.md`
 
-## Milestone 后续 / Final 阶段
+## Final 阶段与补充消融
 
-当前 milestone 已经跑通完整链路，但 SFT 和 RLHF 质量仍弱。Final 阶段建议按下面顺序继续：
+当前 final 主线已经跑通完整链路：final SFT、reward model、PPO/RLHF、人工评分表、安全评估表和 final report 草稿均已有。SFT 与 RLHF 质量仍弱，最终报告应如实报告该负结果。
 
-1. 使用更多 Alpaca 样本和更多可训练层重新跑 SFT。
-2. 基于新的 SFT checkpoint 训练更强 reward model。
-3. 使用 PKU-SafeRLHF prompt、safety prompt oversampling 和 dynamic KL beta 跑 PPO。
-4. 生成人工 SFT 评估表和安全评估表，手动填写分数。
-5. 汇总最终指标并生成 final report 草稿。
-
-查看需要你手动执行的训练命令：
+查看 final 主线命令：
 
 ```bash
 bash scripts/print_final_training_commands.sh
+```
+
+查看 proposal 对应的补充消融与进阶实验命令：
+
+```bash
+bash scripts/print_ablation_commands.sh
 ```
 
 主要 final 配置：
@@ -210,6 +210,9 @@ bash scripts/print_final_training_commands.sh
 - `configs/reward_final.yaml`
 - `configs/ppo_final.yaml`
 - `configs/sft_lora_ablation.yaml`
+- `configs/sft_data_ablation_2500.yaml`
+- `configs/pretrain_small_ablation.yaml`
+- `configs/sft_small_pretrain_ablation.yaml`
 
 人工评分汇总：
 
@@ -223,6 +226,7 @@ python scripts/summarize_manual_eval.py \
 生成 final report 草稿：
 
 ```bash
+python scripts/summarize_ablation_results.py
 python scripts/make_final_report.py
 ```
 
@@ -234,5 +238,6 @@ python scripts/make_final_report.py
 - Final SFT manual eval：`reports/manual_eval_sft_final.csv`
 - Final safety eval：`reports/safety_eval_final.csv`
 - Final eval summary：`reports/final_eval_summary.json`
+- Ablation summary：`reports/ablation_summary.md`
 - Final report draft：`reports/final_report.md`
 - Final slides outline：`reports/final_slides_outline.md`

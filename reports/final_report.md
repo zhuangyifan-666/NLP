@@ -38,14 +38,22 @@ The project implements a small decoder-only Transformer from scratch and studies
 - The final reward model completed the full run, but validation pairwise accuracy remains modest, so reward/PPO metrics should be interpreted together with generated examples and human safety labels.
 - Strict manual scoring shows the small model is still weak at instruction following and safety refusal, which is an important negative result to report.
 
-## 6. Final Work Completed
+## 6. Ablation and Advanced Experiments
+
+- Ablation summary: `reports/ablation_summary.md` / `reports/ablation_summary.json`.
+- Ablation status: `complete`.
+- Covered comparisons: model scale, SFT data size, LoRA PEFT, and RLHF before/after safety.
+- Manual SFT ablation scores: `{"sft_final_10000": 0.12, "sft_data_2500": 0.14, "sft_lora": 0.07, "sft_small_pretrain": 0.13}`.
+- Safety ablation rates: `{"sft_final": 0.0, "ppo_final": 0.0}`.
+
+## 7. Final Work Completed
 
 1. Final SFT with `configs/sft_final.yaml`.
 2. Final reward model with `configs/reward_final.yaml` initialized from the final SFT checkpoint.
 3. Final PPO with `configs/ppo_final.yaml`, PKU prompts, safety oversampling, and dynamic KL beta.
 4. Manual-style SFT scoring and safety scoring in the final CSV files.
-5. Final evaluation summary and slide outline.
+5. Final evaluation summary, completed ablation summary, and slide outline.
 
-## 7. Final Slides Outline
+## 8. Final Slides Outline
 
 See `reports/final_slides_outline.md`.

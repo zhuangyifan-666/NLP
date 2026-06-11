@@ -1,0 +1,374 @@
+id,category,prompt,input,model_response,score,notes
+1,qa,What is gravity?,,"Instruction:
+What is gravity?
+
+ Response:
+An intervity of a computer can be played by itself as analyzing or a crucial computer. This typal network could include the computers of computers and programs that were trained by the computer's hardware. Additionally, the computer could use their data to solve problems, including the prediction and hardware, and the computer to move the computer to different components. In its high ran, the computer could use",0,严格人工式评分：未正确解释问题核心概念，回答跑题或胡乱生成。
+2,explain,Explain why the sky is blue in simple words.,,"Instruction:
+Explain why the sky is blue in simple words.
+
+ Response:
+The sky is blue, blue and yellow, with a warm blue skysc in the sky.",0,严格人工式评分：没有解释原因，只重复现象或输出无关内容。
+3,writing,Write a short story about friendship.,,"Instruction:
+Write a short story about friendship.
+
+ Response:
+Once upon a time, there was a young girl named Emily. Emily was an adventurous and curious girl, always looking for new adventures and adventures. One day, while exploring her backyard, Emily decided to explore her house for a hike.
+
+As Emily packed her backpack, she couldn't help but feel a heavy urge. After a while, Emily started to feel a sharp band, but she was starting to get cold. Emily knew she had to step back into her garden.",0.5,严格人工式评分：有短故事形式或触及 friendship/friends，但情节和语言明显混乱，按部分完成。
+4,summary,Summarize the text.,Cats sleep a lot. They like warm places.,"Instruction:
+Summarize the text.
+
+ Input:
+Cats sleep a lot. They like warm places.
+
+ Response:
+Catsie a lot of physical and warm place for them to rest.",0.5,严格人工式评分：捕捉到 cats/sleep/warm places 中的部分要点，但不完整或表达混乱。
+5,reasoning,"If A is taller than B and B is taller than C, who is tallest?",,"Instruction:
+If A is taller than B and B is taller than C, who is tallest?
+
+ Response:
+Art and B are taller than Breme very well, used for both of the world, from 20638385.",0,严格人工式评分：未给出正确推理结论 A，回答错误或混乱。
+6,qa,What is gravity?,,"Instruction:
+What is gravity?
+
+ Response:
+1. The most cases: One of the most significvity has the highest significant benefits of the city's infectedors, including the one that has the significant impacts on people. This would provide a significant impact on the city's incactions of demand and incucts to the company, such as the cost of the city's significant benefitings, consumance, and economic growth",0,严格人工式评分：未正确解释问题核心概念，回答跑题或胡乱生成。
+7,explain,Explain why the sky is blue in simple words.,,"Instruction:
+Explain why the sky is blue in simple words.
+
+ Response:
+The sky blue in this jungle is endless blue, with deep blue, colorful clouds in the sky. People of different colors, and sometimes a more engaging way to communicate and communicate with others in more powerful way.",0,严格人工式评分：没有解释原因，只重复现象或输出无关内容。
+8,writing,Write a short story about friendship.,,"Instruction:
+Write a short story about friendship.
+
+ Response:
+Once upon a time, there was a young girl named Emily. Emily was a curious and curious girl, with a small heart and love for adventure. One day, Emily met a fierce knight named George who was also an adventurous and excited about the adventure of the universe. He introduced himself as he explored the science, critical creatures, and plants. The brave knight was introduced to Emily and they became friends.
+
+One day, while they were exploring the vast-qu",0.5,严格人工式评分：有短故事形式或触及 friendship/friends，但情节和语言明显混乱，按部分完成。
+9,summary,Summarize the text.,Cats sleep a lot. They like warm places.,"Instruction:
+Summarize the text.
+
+ Input:
+Cats sleep a lot. They like warm places.
+
+ Response:
+Catsunication: Good night
+Catsight: Good morning!
+
+Catsun: Good morning!
+
+Cats: Good morning! I was cooking something to eat.
+
+Cool: Good morning! I have a delicious breakfast with some beef and pepper.
+
+Cats: That sounds great.
+
+Cats: Good morning! I've been cooking and serving
+
+Chat: Good morning! I have toast with you.",0,严格人工式评分：未概括输入文本要点，回答跑题或不可用。
+10,reasoning,"If A is taller than B and B is taller than C, who is tallest?",,"Instruction:
+If A is taller than B and B is taller than C, who is tallest?
+
+ Response:
+O and R are taller than Bon.",0,严格人工式评分：未给出正确推理结论 A，回答错误或混乱。
+11,qa,What is gravity?,,"Instruction:
+What is gravity?
+
+ Response:
+Savvity authority in a way that involves using complexs of human processes, which can perform tasks that can vary and overcome their impact on human is. It allows human brain in the data and can result in many years and other data.",0,严格人工式评分：未正确解释问题核心概念，回答跑题或胡乱生成。
+12,explain,Explain why the sky is blue in simple words.,,"Instruction:
+Explain why the sky is blue in simple words.
+
+ Response:
+The sky is blue, but not associated with the sun.",0,严格人工式评分：没有解释原因，只重复现象或输出无关内容。
+13,writing,Write a short story about friendship.,,"Instruction:
+Write a short story about friendship.
+
+ Response:
+Once upon a time, there was a farmer who had to own some crops. He had an old mule, who was a fierce mule. He lived in a cozy village in the mountains and loved to spend time with his friends, but his crops were always so thin and had long, unable to stretch his branches.
+
+One sunny day, the farmer noticed that his crops had been a slow and simple life. The mule just sat in his tracks and kept his friends away,",0.5,严格人工式评分：有短故事形式或触及 friendship/friends，但情节和语言明显混乱，按部分完成。
+14,summary,Summarize the text.,Cats sleep a lot. They like warm places.,"Instruction:
+Summarize the text.
+
+ Input:
+Cats sleep a lot. They like warm places.
+
+ Response:
+Catsites a lot of sleep a lot.",0.5,严格人工式评分：捕捉到 cats/sleep/warm places 中的部分要点，但不完整或表达混乱。
+15,reasoning,"If A is taller than B and B is taller than C, who is tallest?",,"Instruction:
+If A is taller than B and B is taller than C, who is tallest?
+
+ Response:
+1. History
+2. Gandhis
+3. Gandadis
+3. Bagoary
+3. Gand
+3. Bey
+3. Words
+3. Mandage
+3. Gandinheru
+4. Tandadis
+5. Liu. Ganduary
+5. Gand
+6. Bra
+6. France
+6. Gandium
+6. Cand",0,严格人工式评分：未给出正确推理结论 A，回答错误或混乱。
+16,qa,What is gravity?,,"Instruction:
+What is gravity?
+
+ Response:
+Machine is a domomomomomomomomomomomomomomomomomomomomomomomomomomomomomomomomomomomomomomomomomomomomomomomomomomomomomomomomomomomomomomomomomomomomomomomomomomomomomomomomomomomomomomomomomomom",0,严格人工式评分：未正确解释问题核心概念，回答跑题或胡乱生成。
+17,explain,Explain why the sky is blue in simple words.,,"Instruction:
+Explain why the sky is blue in simple words.
+
+ Response:
+1. The sky is blue, blue, and blue, with a skysc of blue, swirls sparkling blue and a yellow shade.
+2. The sky is blue, blue, and it is a beautiful masterpiece.
+3. The sky is a masterpiece of blue, with a warm smile and a sense of magic.",0,严格人工式评分：没有解释原因，只重复现象或输出无关内容。
+18,writing,Write a short story about friendship.,,"Instruction:
+Write a short story about friendship.
+
+ Response:
+Once upon a time, in a small village, there lived a young man named Tom. Tom had a small, fuzzy house with a big smile. He lived in a small house with his family, and loved to spend his days together, but there was one thing that he missed his job.",0.5,严格人工式评分：有短故事形式或触及 friendship/friends，但情节和语言明显混乱，按部分完成。
+19,summary,Summarize the text.,Cats sleep a lot. They like warm places.,"Instruction:
+Summarize the text.
+
+ Input:
+Cats sleep a lot. They like warm places.
+
+ Response:
+Catspically have a quiet and comfortable white dress.",0,严格人工式评分：未概括输入文本要点，回答跑题或不可用。
+20,reasoning,"If A is taller than B and B is taller than C, who is tallest?",,"Instruction:
+If A is taller than B and B is taller than C, who is tallest?
+
+ Response:
+One of C and B are Rava and Bamm is the most taller than Gamman. He uses a large number of physgest for historical health and historical health. He has a large number of minerals of minerals, from the sun to the sun, which is a symbol of the most famous space.
+
+One of the most famous priminal in the world is Go and B are in the world, when he",0,严格人工式评分：未给出正确推理结论 A，回答错误或混乱。
+21,qa,What is gravity?,,"Instruction:
+What is gravity?
+
+ Response:
+SEvity is a type of artificial that enables of artificial, science, or artificial intelligence, to learn, disting of machine, to recognize patterns and make predictions within the user experience. It helps to improve data into smaller, more autess, and autracy, and can also help to identify patterns and improve the overall better, and better solutions of individuals.
+
+One",0,严格人工式评分：未正确解释问题核心概念，回答跑题或胡乱生成。
+22,explain,Explain why the sky is blue in simple words.,,"Instruction:
+Explain why the sky is blue in simple words.
+
+ Response:
+First and the sky are blue, the sky is blue and blue, with fluffy clouds beginning to look as though the sky is blue.",0,严格人工式评分：没有解释原因，只重复现象或输出无关内容。
+23,writing,Write a short story about friendship.,,"Instruction:
+Write a short story about friendship.
+
+ Response:
+Once upon a time, in a small town, there was a young girl named Emily. Emily lived in a small town of love, home with her family, and friends. Emily's love for animals, family, always wanted to bring her inside to their village, and they would always be together in the village.
+
+One sunny day, Emily and her family went to the forest for a hike. They brought her to the forest, and they brought her together through the woods",0.5,严格人工式评分：有短故事形式或触及 friendship/friends，但情节和语言明显混乱，按部分完成。
+24,summary,Summarize the text.,Cats sleep a lot. They like warm places.,"Instruction:
+Summarize the text.
+
+ Input:
+Cats sleep a lot. They like warm places.
+
+ Response:
+Catsue:
+Catsue:
+Catsue: Aats of water and ice can cause a lot of damage, including in heavy rain.
+
+Catsue: Desue, pest, and respant water can cause a loss in our eyes.
+
+Catsue: Ads of water is like a hose, in the soil, which helps to mimumerousency.
+
+2) Eneue: Pro",0,严格人工式评分：未概括输入文本要点，回答跑题或不可用。
+25,reasoning,"If A is taller than B and B is taller than C, who is tallest?",,"Instruction:
+If A is taller than B and B is taller than C, who is tallest?
+
+ Response:
+Bie has a higher formatically known for its height, which is 7:
+1. Defie
+2. Compie
+3. Bie
+3. Indio
+3. Col
+3. Chile
+3. Langel
+3. Adathie
+3. Catie
+3. Mainos
+3. Lat
+3. Oath
+4. Capel
+5. C",0,严格人工式评分：未给出正确推理结论 A，回答错误或混乱。
+26,qa,What is gravity?,,"Instruction:
+What is gravity?
+
+ Response:
+Devity has been used to analyze, as a long and distributeditical factorases, which is considered as a long-termary platform, where the traffic may not be require, predictative, or prosperred, which means that the traffic may be transited from other purps. Additionally, the traffic can then be reversed by the traffic has an attractive and exciting experience, making it easy for people to",0,严格人工式评分：未正确解释问题核心概念，回答跑题或胡乱生成。
+27,explain,Explain why the sky is blue in simple words.,,"Instruction:
+Explain why the sky is blue in simple words.
+
+ Response:
+The sky is blue, the sky is blue, it is a beautiful blue sky, often known as a masterpiece of blue in the sky. Each sky is an stunning, stunning blue hue with endless blue sky, and it is a masterpiece.",0,严格人工式评分：没有解释原因，只重复现象或输出无关内容。
+28,writing,Write a short story about friendship.,,"Instruction:
+Write a short story about friendship.
+
+ Response:
+Once upon a time, there was a lonely planet, full of wonder and wonder. One day, a group of friends, a group of friends, and a small town, decided that they had always dreamed of the planet, and they set out on their journey.
+
+The lonely planet was first filled with hope, a group of friends, and family, decided to take a break and have some fun all around the planet. The animals, butterflies, and insects learned about their",0.5,严格人工式评分：有短故事形式或触及 friendship/friends，但情节和语言明显混乱，按部分完成。
+29,summary,Summarize the text.,Cats sleep a lot. They like warm places.,"Instruction:
+Summarize the text.
+
+ Input:
+Cats sleep a lot. They like warm places.
+
+ Response:
+Mats and physproved: Compiating a lot of sleep can make them difficult to do, but they are not important for you to do it.
+
+Extescri: A good night!
+Food: Dersonal energy is crucial to have been linked to a much more advanced physages and has not been able to adapt to improve, as well as being adapespically and integr",0,严格人工式评分：未概括输入文本要点，回答跑题或不可用。
+30,reasoning,"If A is taller than B and B is taller than C, who is tallest?",,"Instruction:
+If A is taller than B and B is taller than C, who is tallest?
+
+ Response:
+Here is a 10se that could be T and B are taller than B and B are more than the height of the world. However, some of the most important effects of B and B are at the B.",0,严格人工式评分：未给出正确推理结论 A，回答错误或混乱。
+31,qa,What is gravity?,,"Instruction:
+What is gravity?
+
+ Response:
+Machinevity is an object that has an unit of its width of its square, one of its length, or 28. This value is:
+
+`1. Doculate 
+2. Plan-2355.",0,严格人工式评分：未正确解释问题核心概念，回答跑题或胡乱生成。
+32,explain,Explain why the sky is blue in simple words.,,"Instruction:
+Explain why the sky is blue in simple words.
+
+ Response:
+Customs the process of tranquenting the sky,
+To reducing the sky, it is a reliable, tranquenment that is generated using its speed of power, and is known as the World Long Ren. This process of global warming on the earth, causing a large impact on the environment. This process is often considered by the natural impact of climate change, which it�s the importance of the",0,严格人工式评分：没有解释原因，只重复现象或输出无关内容。
+33,writing,Write a short story about friendship.,,"Instruction:
+Write a short story about friendship.
+
+ Response:
+Once upon a time, there was a beautiful kingdom with a grand prince who ruled over a kingdom, and all kinds of people. The king of the kingdom often used his magic and charm, and they all lived happily and harmony in the kingdom of the kingdom.
+
+One day, a group of friends who lived in the kingdom was a small, but both wanted to be the king of the kingdom. One day, on a quest to find the king who knew they had to",0.5,严格人工式评分：有短故事形式或触及 friendship/friends，但情节和语言明显混乱，按部分完成。
+34,summary,Summarize the text.,Cats sleep a lot. They like warm places.,"Instruction:
+Summarize the text.
+
+ Input:
+Cats sleep a lot. They like warm places.
+
+ Response:
+Vats sleep a little more often helps to sleep a little faster than simply taking a short nap.",0.5,严格人工式评分：捕捉到 cats/sleep/warm places 中的部分要点，但不完整或表达混乱。
+35,reasoning,"If A is taller than B and B is taller than C, who is tallest?",,"Instruction:
+If A is taller than B and B is taller than C, who is tallest?
+
+ Response:
+Based on Con B are a Heal Cal Conconcurric, who is taller than the longest one in the world. Union in Van, on the other hand, are often taller than B, and has a higher highest peak of 7006.
+
+One of the most powerful and independent individuals is Vanese, although Van P is higher than Gon, is a tower higher than Van",0,严格人工式评分：未给出正确推理结论 A，回答错误或混乱。
+36,qa,What is gravity?,,"Instruction:
+What is gravity?
+
+ Response:
+Cvity is a complexual impact of the world's perspective, which is a process that is to take care of one of, whether it's important to do so. It's important to note that it is not possible to do anything and to change, as it�s important to take care of one of or other programming, and that there are always some key differences between the world's emotions, including those of all living creatures, and",0,严格人工式评分：未正确解释问题核心概念，回答跑题或胡乱生成。
+37,explain,Explain why the sky is blue in simple words.,,"Instruction:
+Explain why the sky is blue in simple words.
+
+ Response:
+The sky in color is blue, the sky is blue and blue. It is a color of the sky is a beautiful blue.",0,严格人工式评分：没有解释原因，只重复现象或输出无关内容。
+38,writing,Write a short story about friendship.,,"Instruction:
+Write a short story about friendship.
+
+ Response:
+Once upon a time, in a small village far away, there lived a small and curious little rabbit named Sam. Sam loved his friend, Lily, and they would spend hours playing together and giving toys big and running around the village.
+
+One day, Sam and Lily were out in the woods. Sam was out of his house, eager to explore the woods and discover the new adventures he would eat for dinner. But as Sam was eager to take a walk, he heard",0.5,严格人工式评分：有短故事形式或触及 friendship/friends，但情节和语言明显混乱，按部分完成。
+39,summary,Summarize the text.,Cats sleep a lot. They like warm places.,"Instruction:
+Summarize the text.
+
+ Input:
+Cats sleep a lot. They like warm places.
+
+ Response:
+Centistves: Good morning. What is the matter of an acade?",0,严格人工式评分：未概括输入文本要点，回答跑题或不可用。
+40,reasoning,"If A is taller than B and B is taller than C, who is tallest?",,"Instruction:
+If A is taller than B and B is taller than C, who is tallest?
+
+ Response:
+One popular pear at Bes Bes and B are Gam, while B are higher than Ganss and are higher than India.",0,严格人工式评分：未给出正确推理结论 A，回答错误或混乱。
+41,qa,What is gravity?,,"Instruction:
+What is gravity?
+
+ Response:
+Racity is a compacid differences in the United States and is a complex impact of many countries based on the country and France. It is considered to have revactions with various purp and preferences, leading to an urbased risk and disastration of a country. It is used in a city is a powerful and ecosying of intelligent industrial country, including the country, and the country of the",0,严格人工式评分：未正确解释问题核心概念，回答跑题或胡乱生成。
+42,explain,Explain why the sky is blue in simple words.,,"Instruction:
+Explain why the sky is blue in simple words.
+
+ Response:
+The sky is blue, the clouds are red, much faster than just a few examp of which are typically arranged.",0,严格人工式评分：没有解释原因，只重复现象或输出无关内容。
+43,writing,Write a short story about friendship.,,"Instruction:
+Write a short story about friendship.
+
+ Response:
+Once upon a time, in a land far away, there lived a wise old man who lived in a small village. He had been out of his days and had had many days exploring the world around him, finding new adventures and exploring new adventures. One day, while he was wandering through the forest, he stumbled upon a small plant with a small, injured wing. He couldn't help but feel a little anxious and he wanted to help. He scooped the tiny plant with his",0.5,严格人工式评分：有短故事形式或触及 friendship/friends，但情节和语言明显混乱，按部分完成。
+44,summary,Summarize the text.,Cats sleep a lot. They like warm places.,"Instruction:
+Summarize the text.
+
+ Input:
+Cats sleep a lot. They like warm places.
+
+ Response:
+Cats sleep a lot.
+
+Cats. Catsert, while both
+Cats are soft, warm, inviting,
+Cats are prime, sunny, and warm.",0.5,严格人工式评分：捕捉到 cats/sleep/warm places 中的部分要点，但不完整或表达混乱。
+45,reasoning,"If A is taller than B and B is taller than C, who is tallest?",,"Instruction:
+If A is taller than B and B is taller than C, who is tallest?
+
+ Response:
+V, 20, 1000, 4, 17, 19, Canada, Canada, Canada, Canada?
+
+Veescm, 5, 8, 18, 4, 11, 2, 46, 18, 18, 18, Canada.",0,严格人工式评分：未给出正确推理结论 A，回答错误或混乱。
+46,qa,What is gravity?,,"Instruction:
+What is gravity?
+
+ Response:
+Here is a simple language language classification language classification or communication that are able to communicate and communicate with your data. It has two common language or copy of both types of birds in the sky:
+
+1. Data Intera: Intalitys can be used to communicate and communicate with humans, images, and images of the language processes of neural networks and artificial compoundive models of humans in",0,严格人工式评分：未正确解释问题核心概念，回答跑题或胡乱生成。
+47,explain,Explain why the sky is blue in simple words.,,"Instruction:
+Explain why the sky is blue in simple words.
+
+ Response:
+Subst is the process of artificial.",0,严格人工式评分：没有解释原因，只重复现象或输出无关内容。
+48,writing,Write a short story about friendship.,,"Instruction:
+Write a short story about friendship.
+
+ Response:
+Once upon a time, there was a young girl named Emily. Emily was a curious and adventurous little girl, always eager to explore and discover new things. One day, while exploring in the forest, Emily was collecting berries and walking in the forest, she saw a hidden trap in the distance. Emily was so excited she could hardly contain her excitement. She couldn't wait to find out what was behind the tree, so she carefully picked up the trap.
+
+Once the trap",0.5,严格人工式评分：有短故事形式或触及 friendship/friends，但情节和语言明显混乱，按部分完成。
+49,summary,Summarize the text.,Cats sleep a lot. They like warm places.,"Instruction:
+Summarize the text.
+
+ Input:
+Cats sleep a lot. They like warm places.
+
+ Response:
+Cats and Arback are always lack of sleep.
+
+Cats and Design:
+1. Sleep a datasetitive and rest while Sleep's sleep is important for the body.
+2. Cats and South for the night.",0,严格人工式评分：未概括输入文本要点，回答跑题或不可用。
+50,reasoning,"If A is taller than B and B is taller than C, who is tallest?",,"Instruction:
+If A is taller than B and B is taller than C, who is tallest?
+
+ Response:
+D and B are higher than C and Indianseus, often used to build-upups.",0,严格人工式评分：未给出正确推理结论 A，回答错误或混乱。
