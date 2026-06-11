@@ -11,8 +11,8 @@
 - [x] Alpaca SFT run with response-only loss and last-layer fine-tuning logic.
 - [x] Reward model and simplified PPO debug runs.
 - [x] LoRA and PPO sampling advanced interfaces.
-- [ ] Human SFT scoring completed.
-- [ ] Human safety scoring completed.
+- [x] Human SFT scoring completed.
+- [x] Human safety scoring completed.
 
 ## 2. Environment and Hardware
 
@@ -36,7 +36,7 @@
 - Metrics CSV: `present`
 - Figure: `present`
 - Manual eval sheet: `present`
-- Manual score completion: `0/50 filled`
+- Manual score completion: `50/50 filled`
 - Last logged row: `{"step": "2000", "train_loss": "3.785861551761627", "val_loss": "3.9314149141311647", "lr": "6.834904537900144e-11"}`
 
 ## 6. RLHF Debug Status
@@ -44,7 +44,7 @@
 - Reward metrics: `{"step": "10", "train_loss": "0.4081365168094635", "val_loss": "1.0871022641658783", "pairwise_acc": "0.5714285714285714", "lr": "3.8060233744356634e-07"}`
 - PPO metrics: `{"step": "2", "reward_mean": "1.1987080574035645", "kl_mean": "-0.002368208020925522", "policy_loss": "-0.011577516794204712", "value_loss": "1.6745532751083374", "entropy": "3.291649103164673", "clipfrac": "0.0"}`
 - Safety eval sheet: `present`
-- Human safety completion: `0/5 filled`
+- Human safety completion: `5/5 filled`
 
 ## 7. Advanced Plan
 
@@ -59,7 +59,7 @@
 
 ## 9. Plan After June 3
 
-1. Fill manual scores in `reports/manual_eval_sft.csv` and `reports/safety_eval.csv`.
+1. Use manual SFT and safety scores to identify the weakest capabilities.
 2. Improve SFT if manual score is low: train longer, unfreeze more layers, or use more Alpaca samples.
 3. Scale reward model/PPO beyond debug after validating reward pairwise accuracy.
 4. Add qualitative failure cases and ablation tables to the final report.

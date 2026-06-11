@@ -1,0 +1,40 @@
+seed: 1337
+synthetic: false
+tokenizer_path: outputs/tokenizer/tokenizer.json
+sft_checkpoint: outputs/checkpoints/sft_final/best.pt
+reward_checkpoint: outputs/checkpoints/reward_final/best.pt
+out_dir: outputs/checkpoints/ppo_final
+log_path: outputs/logs/ppo_final_metrics.csv
+data:
+  dataset: PKU-Alignment/PKU-SafeRLHF-10K
+  split: train
+  max_samples: 512
+prompt_max_length: 128
+max_new_tokens: 64
+batch_size: 2
+ppo_epochs: 2
+max_steps: 200
+learning_rate: 0.000001
+cliprange: 0.2
+vf_coef: 0.5
+ent_coef: 0.01
+kl_beta: 0.05
+temperature: 0.8
+top_k: 50
+grad_clip: 1.0
+sampling:
+  safety_prompt_ratio: 0.6
+  dynamic_kl_beta: true
+  target_kl: 0.1
+  kl_increase: 1.5
+  kl_decrease: 0.75
+  safety_keywords:
+    - harm
+    - hack
+    - bomb
+    - weapon
+    - kill
+    - suicide
+    - attack
+    - steal
+

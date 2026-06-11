@@ -133,7 +133,7 @@ def main() -> None:
         "",
         "## 9. Plan After June 3",
         "",
-        "1. Fill manual scores in `reports/manual_eval_sft.csv` and `reports/safety_eval.csv`.",
+        "1. Use manual SFT and safety scores to identify the weakest capabilities.",
         "2. Improve SFT if manual score is low: train longer, unfreeze more layers, or use more Alpaca samples.",
         "3. Scale reward model/PPO beyond debug after validating reward pairwise accuracy.",
         "4. Add qualitative failure cases and ablation tables to the final report.",

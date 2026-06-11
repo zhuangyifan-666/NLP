@@ -18,6 +18,7 @@ from nlp_llm.ppo import PPOConfig, PolicyWithValue, compute_ppo_loss, logprobs_f
 from nlp_llm.reward_model import RewardModel
 from nlp_llm.tokenizer import load_tokenizer
 from nlp_llm.trainer_utils import CSVLogger, rank0_print, set_seed
+from advanced.ppo_sampling import oversample_safety_prompts, update_kl_beta
 
 
 def load_prompts(cfg: dict) -> list[str]:
@@ -26,7 +27,35 @@ def load_prompts(cfg: dict) -> list[str]:
     prompt_file = cfg.get("prompt_file")
     if prompt_file:
         return [line.strip() for line in Path(prompt_file).read_text(encoding="utf-8").splitlines() if line.strip()]
-    return synthetic_prompts()
+    data_cfg = cfg.get("data", {})
+    if not data_cfg:
+        return synthetic_prompts()
+    try:
+        from datasets import load_dataset
+    except ImportError as exc:
+        raise RuntimeError("datasets is required for PPO prompt loading. Install manually with: python -m pip install -r requirements.txt") from exc
+    name = data_cfg.get("dataset", "PKU-Alignment/PKU-SafeRLHF-10K")
+    split = data_cfg.get("split", "train")
+    max_samples = int(data_cfg.get("max_samples", 512))
+    try:
+        ds = load_dataset(name, split=split)
+    except Exception as exc:
+        raise RuntimeError(f"Failed to load PPO prompt dataset {name}; run manually with network/HF cache available.") from exc
+    prompts: list[str] = []
+    for row in ds:
+        prompt = str(row.get("prompt") or row.get("instruction") or "").strip()
+        if prompt:
+            prompts.append(prompt)
+        if len(prompts) >= max_samples:
+            break
+    sampling_cfg = cfg.get("sampling", {})
+    if sampling_cfg.get("safety_prompt_ratio", 0) > 0:
+        prompts = oversample_safety_prompts(
+            prompts,
+            sampling_cfg.get("safety_keywords", ["harm", "hack", "bomb", "weapon", "kill", "suicide", "attack", "steal"]),
+            float(sampling_cfg.get("safety_prompt_ratio", 0.5)),
+        )
+    return prompts or synthetic_prompts()
 
 
 def collate_prompts(batch: list[dict], pad_id: int) -> dict:
@@ -156,6 +185,15 @@ def main() -> None:
             }
         )
         rank0_print(f"ppo step {step}: reward={float(reward.mean()):.4f} kl={float(loss_out['kl_mean']):.4f}")
+        sampling_cfg = cfg.get("sampling", {})
+        if sampling_cfg.get("dynamic_kl_beta", False):
+            ppo_cfg.kl_beta = update_kl_beta(
+                ppo_cfg.kl_beta,
+                float(loss_out["kl_mean"].detach().cpu()),
+                float(sampling_cfg.get("target_kl", 0.1)),
+                float(sampling_cfg.get("kl_increase", 1.5)),
+                float(sampling_cfg.get("kl_decrease", 0.75)),
+            )
     out_dir = Path(cfg.get("out_dir", "outputs/checkpoints/ppo"))
     save_checkpoint(out_dir / "last.pt", policy.policy, optimizer, step, None, {"tokenizer_path": cfg.get("tokenizer_path")})
     out_dir.mkdir(parents=True, exist_ok=True)
