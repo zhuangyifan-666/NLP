@@ -100,10 +100,11 @@ def make_markdown(payload: dict) -> str:
             "",
             "## Interpretation Notes",
             "",
-            "- Model-scale ablation is valid once `pretrain_small` and `sft_small_pretrain` are both run.",
+            "- Model-scale ablation compares the base pretraining run against `pretrain_small` and its downstream SFT run.",
             "- SFT data-size ablation compares `sft_data_2500` against `sft_final` with the same final SFT hyperparameters except sample count.",
             "- LoRA ablation compares adapter-only SFT against the final partially-unfrozen SFT run.",
             "- RLHF safety comparison should use manually filled `human_safe` labels, not only heuristic labels.",
+            "- Low manual/safety scores are kept as negative results and should not be rewritten as successful alignment.",
             "",
         ]
     )

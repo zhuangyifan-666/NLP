@@ -1,21 +1,21 @@
-# NLP LLM Milestone
+# NLP LLM Final Project
 
-本仓库用于 NLP 课程大作业：从零开始训练小规模 decoder-only Transformer，并完成预训练、指令微调、奖励模型与 PPO/RLHF 的 milestone 前可交付代码。
+本仓库用于 NLP 课程大作业：从零开始训练小规模 decoder-only Transformer，并完成 TinyStories 预训练、Alpaca-Cleaned 指令微调、PKU-SafeRLHF reward model 与 PPO/RLHF，以及 LoRA/PPO sampling 进阶实验。
 
 保留文件：
 
 - `Proposal_241880230_庄一凡 (1).pdf`：proposal 原文
 - `README.md`：当前工程说明
 
-## 当前 Milestone 状态
+## 当前 Final 状态
 
-- 已实现工程脚手架、配置、脚本入口、测试和报告生成器。
+- 已实现工程脚手架、配置、脚本入口、测试、绘图和报告生成器。
 - 已实现 PyTorch 从零构建的 GPT-style decoder-only Transformer。
 - 已实现 TinyStories tokenizer 训练、token bin 准备、预训练、验证 PPL、checkpoint 和曲线绘制逻辑。
-- 已实现 Alpaca-Cleaned SFT 数据处理、response-only loss、冻结 embedding/前 N 层并默认只训练最后 2 层。
-- 已实现 reward model pairwise ranking loss 和简化但真实可运行的 PPO debug 代码。
-- 已实现 `advanced/lora.py` 和 `advanced/ppo_sampling.py` 接口。
-- 长训指标、人工评分、安全率等未实际运行的结果均保持 `not yet run` 或空白，不伪造数值。
+- 已实现 Alpaca-Cleaned SFT 数据处理、response-only loss、冻结 embedding/前 N 层并默认支持课程 baseline：只训练最后 2 层、final layer norm 和 lm_head。
+- 已实现 reward model pairwise ranking loss 和 PPO/RLHF 训练代码。
+- 已实现 `advanced/lora.py` 和 `advanced/ppo_sampling.py`，并完成 LoRA、数据量、模型规模和 PPO final 的消融/对比汇总。
+- 已完成 final 主要训练与评估。预训练 PPL 达到课程目标；SFT/RLHF 指标较弱，报告中按负结果如实分析，不伪造未运行结果。
 
 ## 环境
 
@@ -190,7 +190,9 @@ SKIP_INSTALL=1 bash scripts/run_milestone_pipeline.sh
 
 ## Final 阶段与补充消融
 
-当前 final 主线已经跑通完整链路：final SFT、reward model、PPO/RLHF、人工评分表、安全评估表和 final report 草稿均已有。SFT 与 RLHF 质量仍弱，最终报告应如实报告该负结果。
+当前 final 主线已经跑通完整链路：final SFT、reward model、PPO/RLHF、人工评分表、安全评估表、消融汇总和正式 final report 均已有。SFT 与 RLHF 质量仍弱，最终报告已如实报告该负结果。
+
+课程 baseline 的 SFT 冻结策略是 `configs/sft_4gpu.yaml`：冻结 embedding、pos embedding、前 `n_layer-2` 层，只训练最后 2 层、final layer norm 和 lm_head。`configs/sft_final.yaml` 中的 `train_last_n_layers: 4` 是 final 阶段为提升效果进行的扩展实验，不能写成课程 baseline。
 
 查看 final 主线命令：
 
@@ -223,11 +225,17 @@ python scripts/summarize_manual_eval.py \
   --out reports/final_eval_summary.json
 ```
 
-生成 final report 草稿：
+生成 final report：
 
 ```bash
 python scripts/summarize_ablation_results.py
 python scripts/make_final_report.py
+```
+
+最终提交自检：
+
+```bash
+python scripts/final_submission_check.py
 ```
 
 相关输出：
@@ -239,5 +247,25 @@ python scripts/make_final_report.py
 - Final safety eval：`reports/safety_eval_final.csv`
 - Final eval summary：`reports/final_eval_summary.json`
 - Ablation summary：`reports/ablation_summary.md`
-- Final report draft：`reports/final_report.md`
+- Final report：`reports/final_report.md`
 - Final slides outline：`reports/final_slides_outline.md`
+
+## Final Submission Notes / 最终提交说明
+
+建议最终提交重点包含以下文件：
+
+- Final report：`reports/final_report.md`
+- Final eval summary：`reports/final_eval_summary.json`
+- SFT manual eval：`reports/manual_eval_sft_final.csv`
+- Safety eval：`reports/safety_eval_final.csv`
+- Ablation summary：`reports/ablation_summary.md`
+- Advanced 说明：`advanced/README.md`
+- Checkpoint/artifact 说明：`reports/MODEL_ARTIFACTS.md`
+- 最终自检脚本：`scripts/final_submission_check.py`
+
+结果口径：
+
+- TinyStories 预训练 PPL 已达到课程目标 PPL < 50，曲线见 `outputs/figures/pretrain_loss_ppl.png`。
+- SFT/RLHF 指标未达到理想课程目标，`reports/final_report.md` 中已保留真实数值和负结果分析。
+- SFT 课程 baseline 是最后 2 层可训练；final 主实验使用最后 4 层可训练时已标注为扩展实验。
+- 大 checkpoint 默认由 `.gitignore` 忽略，不应提交到 GitHub。若课程要求提交模型权重，请按 `reports/MODEL_ARTIFACTS.md` 说明通过课程平台压缩包或网盘另交。

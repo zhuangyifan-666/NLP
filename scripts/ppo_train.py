@@ -155,16 +155,18 @@ def main() -> None:
         prompt_ids = batch["input_ids"].to(device)
         with torch.no_grad():
             full = policy.generate(prompt_ids, max_new_tokens=max_new_tokens, temperature=float(cfg.get("temperature", 0.8)), top_k=int(cfg.get("top_k", 50)), eos_id=tokenizer.eos_id)
-            model_in = full[:, :-1]
-            actions = full[:, 1:]
-            prompt_len = prompt_ids.size(1)
-            response_mask = torch.zeros_like(actions, dtype=torch.float32)
-            response_mask[:, max(0, prompt_len - 1) :] = 1.0
+        model_in = full[:, :-1]
+        actions = full[:, 1:]
+        prompt_len = prompt_ids.size(1)
+        response_mask = torch.zeros_like(actions, dtype=torch.float32)
+        response_mask[:, max(0, prompt_len - 1) :] = 1.0
+        with torch.no_grad():
             old_out = policy(model_in)
             ref_out = ref(model_in)
-            old_logp = logprobs_from_logits(old_out["logits"], actions)
-            ref_logp = logprobs_from_logits(ref_out["logits"], actions)
-            reward = reward_model(full, attention_mask=(full != tokenizer.pad_id).long())
+            old_logp = logprobs_from_logits(old_out["logits"], actions).detach()
+            ref_logp = logprobs_from_logits(ref_out["logits"], actions).detach()
+            reward = reward_model(full, attention_mask=(full != tokenizer.pad_id).long()).detach()
+        policy.train()
         for _ in range(int(cfg.get("ppo_epochs", 2))):
             out = policy(model_in)
             loss_out = compute_ppo_loss(out["logits"], out["values"], actions, old_logp, ref_logp, reward, response_mask, ppo_cfg)
